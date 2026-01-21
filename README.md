@@ -8,16 +8,27 @@ This project trains a YOLOv8 model to detect:
 Training and inference were performed using the Ultralytics YOLO CLI.
 
 ## Setup
+
 ```bash
 pip install -r requirements.txt
 ```
 
 ## Training
+
 ```bash
 yolo detect train model=yolov8n.pt data=data.yaml epochs=50
 ```
 
+## Results
+
+### Training Metrics
+![Training Results](runs/detect/train/results.png)
+
+### Confusion Matrix
+![Confusion Matrix](runs/detect/train/confusion_matrix.png)
+
 ## Inference
+
 ```bash
 yolo detect predict model=runs/detect/train/weights/best.pt source=path/to/image.jpg
 ```
